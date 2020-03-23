@@ -3,10 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/style.css') }}" type="text/css" rel="stylesheet"/>
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+        {% block header %}
+            <div id="header">
+                <ul id="menu">
+                    <li><a href="{{ path('index') }}">Inicio</a></li>
+                    <li><a href="">Mis tareas</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a href="{{ path('registro') }}">Registro</a></li>
+                </ul>
+                <h1>Gestión de Tareas</h1>
+            </div>
+            <div class="clearfix"></div>
+        {% endblock %}
+    {% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
