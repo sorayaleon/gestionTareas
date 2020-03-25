@@ -11,10 +11,16 @@
         {% block header %}
             <div id="header">
                 <ul id="menu">
-                    <li><a href="{{ path('index') }}">Inicio</a></li>
-                    <li><a href="">Mis tareas</a></li>
-                    <li><a href="">Login</a></li>
-                    <li><a href="{{ path('registro') }}">Registro</a></li>
+                        
+                    {% if app.user %}
+                        <li><a href="{{ path('tareas') }}">Inicio</a></li>
+                        <li><a href="">Mis tareas</a></li>
+                        <li class="dcha"><a href="">{{ app.user.nombre ~ ' ' ~ app.user.apellidos }}</a></li>
+                        <li class="dcha"><a href="{{ path('logout') }}">Cerrar Sesión</a></li>
+                    {% else %}
+                        <li><a href="{{ path('login') }}">Login</a></li>
+                        <li><a href="{{ path('registro') }}">Registro</a></li>
+                    {% endif %}
                 </ul>
                 <h1>Gestión de Tareas</h1>
             </div>

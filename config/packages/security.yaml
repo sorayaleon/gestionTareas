@@ -7,6 +7,10 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
+        proveedor:
+            entity: 
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -14,6 +18,13 @@ security:
         main:
             anonymous: lazy
             provider: users_in_memory
+            form_login:
+                login_path: login
+                check_path: login
+                provider: proveedor
+            logout: 
+                path: /logout
+                target: /login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
