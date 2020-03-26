@@ -1,5 +1,5 @@
 tareas:
-    path: /
+    path: /tareas
     controller: App\Controller\TareaController::index
     
 detalleTarea:
@@ -27,7 +27,7 @@ registro:
     controller: App\Controller\UserController::registro
 
 login:
-    path: /login
+    path: /
     controller: App\Controller\UserController::login
 
 logout:

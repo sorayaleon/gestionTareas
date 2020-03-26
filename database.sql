@@ -12,9 +12,9 @@ created_at      datetime,
 CONSTRAINT pk_users PRIMARY KEY(id)
 )ENGINE=InnoDb;
 
-INSERT INTO users VALUES(NULL, 'NORMAL', 'Soraya', 'León', 'soraya@soraya.com', '12345', CURTIME());
-INSERT INTO users VALUES(NULL, 'NORMAL', 'Pepe', 'Pérez', 'pepe@pepe.com', '12345', CURTIME());
-INSERT INTO users VALUES(NULL, 'NORMAL', 'Carlos', 'Ruz', 'carlos@carlos.com', '12345', CURTIME());
+INSERT INTO users VALUES(NULL, 'ROLE_USER', 'Soraya', 'León', 'soraya@soraya.com', '12345', CURTIME());
+INSERT INTO users VALUES(NULL, 'ROLE_USER', 'Pepe', 'Pérez', 'pepe@pepe.com', '12345', CURTIME());
+INSERT INTO users VALUES(NULL, 'ROLE_USER', 'Carlos', 'Ruz', 'carlos@carlos.com', '12345', CURTIME());
 
 CREATE TABLE IF NOT EXISTS tareas(
 id              int(255) auto_increment not null,

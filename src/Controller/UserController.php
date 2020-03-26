@@ -22,7 +22,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()){
-            $user->setRol('NORMAL');
+            $user->setRol('ROLE_USER');
             $user->setCreatedAt(new \DateTime('now'));
             
             $encoded = $encoder->encodePassword($user, $user->getPassword());
