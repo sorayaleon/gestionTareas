@@ -1,6 +1,26 @@
 tareas:
     path: /
     controller: App\Controller\TareaController::index
+    
+detalleTarea:
+    path: /tarea/{id}
+    controller: App\Controller\TareaController::detalle
+
+crearTarea:
+    path: /crearTarea
+    controller: App\Controller\TareaController::crear
+    
+editarTarea:
+    path: /editarTarea/{id}
+    controller: App\Controller\TareaController::editar
+    
+eliminarTarea:
+    path: /eliminarTarea/{id}
+    controller: App\Controller\TareaController::eliminar
+
+misTareas:
+    path: /misTareas
+    controller: App\Controller\TareaController::misTareas
 
 registro:
     path: /registro

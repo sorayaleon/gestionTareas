@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listdo de tareas{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h2>{{tarea.titulo}}</h2>
+    <p class="dato-tarea">
+        {{tarea.user.nombre}} {{tarea.user.apellidos}} - {{tarea.createdAt|date('d/m/Y h:i')}} - {{tarea.prioridad}} - {{tarea.horas}} horas
+    </p>
+    <p>
+        {{tarea.contenido}}
+    </p>
+</div>
+{% endblock %}

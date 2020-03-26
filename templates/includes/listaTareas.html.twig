@@ -1,0 +1,28 @@
+{% if tareas|length >= 1 %}
+<table>
+    <tr>
+        <th>Tarea</th>
+        <th>Prioridad</th>
+        <th>Horas presupuestadas</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for tarea in tareas  %}
+        <tr>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.prioridad }}</td>
+            <td>{{ tarea.horas }}</td>
+            <td class="buttons">
+                <a href="{{ path('detalleTarea', {'id':tarea.id}) }}" class="btn-show">Ver</a>
+                
+                {% if app.user != null and tarea.user.id == app.user.id %}
+                    <a href="{{ path('editarTarea', {'id':tarea.id}) }}" class="btn-edit">Editar</a>
+                    <a href="{{ path('eliminarTarea', {'id':tarea.id}) }}" class="btn-delete">Eliminar</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <strong>No hay tareas disponibles en este momento</strong>
+{% endif %}

@@ -14,7 +14,8 @@
                         
                     {% if app.user %}
                         <li><a href="{{ path('tareas') }}">Inicio</a></li>
-                        <li><a href="">Mis tareas</a></li>
+                        <li><a href="{{ path('misTareas') }}">Mis tareas</a></li>
+                        <li><a href="{{ path('crearTarea') }}">Crear tarea</a></li>
                         <li class="dcha"><a href="">{{ app.user.nombre ~ ' ' ~ app.user.apellidos }}</a></li>
                         <li class="dcha"><a href="{{ path('logout') }}">Cerrar Sesión</a></li>
                     {% else %}

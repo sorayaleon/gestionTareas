@@ -76,7 +76,9 @@ label{
 
 input[type="text"],
 input[type="password"],
-input[type="email"]{
+input[type="email"],
+textarea,
+select{
     width: 100%;
     padding: 8px;
 }
@@ -97,4 +99,48 @@ input[type="submit"]:hover{
     padding: 8px;
     margin-top: 15px;
     background: green;
+}
+
+table{
+    width: 100%;
+}
+
+table th, 
+table td{
+    background-color: #90A90B;
+    padding: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+table td{
+    background-color: #C6E330;
+}
+
+.buttons a {
+    text-decoration: none;
+    border: 1px solid #00AA33;
+    padding: 10px;
+    color: white;
+    background: green;
+}
+
+.buttons{
+    width: 33%;
+}
+
+.buttons .btn-edit{
+    background: orange;
+    border: 1px solid #f38b06;
+}
+
+.buttons .btn-delete{
+    background: red;
+    border: 1px solid #b90808;
+}
+
+.dato-tarea{
+    color: gray;
 }
